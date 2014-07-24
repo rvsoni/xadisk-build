@@ -35,6 +35,7 @@ function maven_build {
     echo "=== Maven ===" >> work/build.log
     MVN=`pwd`/tool/bin/mvn
     MVN_REPO="-Dmaven.repo.local=`pwd`/.m2"
+    chmod +x $MVN
     cd work
     $MVN $MVN_REPO clean install package >> build.log 2>&1
     cd ..
