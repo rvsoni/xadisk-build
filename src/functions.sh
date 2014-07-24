@@ -31,10 +31,12 @@ function download_and_unzip {
 }
 
 function maven_build {
-    echo "Launching Maven build"
+    echo "Launching Maven build `pwd`"
     echo "=== Maven ===" >> work/build.log
+    MVN=`pwd`/tool/bin/mvn
+    MVN_REPO="-Dmaven.repo.local=`pwd`/.m2"
     cd work
-    mvn clean install package >> build.log 2>&1
+    $MVN $MVN_REPO clean install package >> build.log 2>&1
     cd ..
 }
 

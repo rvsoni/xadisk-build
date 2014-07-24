@@ -2,7 +2,7 @@
 
 source src/functions.sh
 
-check_commands svn unzip patch ant
+check_commands svn unzip patch
 make_directory -f dist
 download_and_unzip https://svn.java.net/svn/xadisk~svn/trunk
 patch_files
